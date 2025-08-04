@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_gestionar_usuarios"
+            android:title="Gestionar Usuarios" />
+
+        <item
+            android:id="@+id/nav_ver_terrenos"
+            android:title="Ver Terrenos" />
+
+        <item
+            android:id="@+id/nav_configuracion"
+            android:title="Configuración" />
+
+    </group>
+
+    <item
+        android:id="@+id/nav_cerrar_sesion"
+        android:title="Cerrar sesión" />
+
+</menu>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TrackearUbicaciones</string>
+    <string name="navigation_drawer_open">Abrir menú</string>
+    <string name="navigation_drawer_close">Cerrar menú</string>
+
+    <string-array name="roles">
+        <item>Administrador</item>
+        <item>Topografo</item>
+    </string-array>
+
+</resources>
