@@ -4,67 +4,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:fitsSystemWindows="true">
 
-    <!-- Contenido principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#1976D2"
-            android:title="Panel de Administrador"
-            android:titleTextColor="#FFFFFF" />
+            android:background="#1E88E5"
+            app:title="Panel de Administrador"
+            app:titleTextColor="#FFFFFF"
+            android:elevation="4dp" />
 
-        <!-- Contenedor principal para el contenido -->
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:padding="24dp"
+            android:background="#121212">
 
-            <!-- Aquí puedes poner contenido inicial, botones, etc. -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btnVerUsuarios"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Gestionar Usuarios"
-                    android:backgroundTint="#1976D2"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginBottom="12dp" />
-
-                <Button
-                    android:id="@+id/btnVerTerrenos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ver Terrenos Registrados"
-                    android:backgroundTint="#1976D2"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginBottom="12dp" />
-
-            </LinearLayout>
-
+                android:text="Selecciona una opción del menú"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_gravity="center" />
         </FrameLayout>
     </LinearLayout>
 
-    <!-- Menú lateral -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="#212121"
+        app:headerLayout="@layout/nav_header_admin"
         app:menu="@menu/menu_admin"
-        android:background="#FFFFFF"
-        />
-
+        app:itemTextColor="#FFFFFF"
+        app:itemIconTint="#B0BEC5" />
 </androidx.drawerlayout.widget.DrawerLayout>

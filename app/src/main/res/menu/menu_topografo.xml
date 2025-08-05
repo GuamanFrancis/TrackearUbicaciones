@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_perfil"
+        android:title="Mi Perfil"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/nav_registrar_terreno"
-        android:title="Registrar Terreno" />
-
+        android:title="Registrar Nuevo Terreno"
+        android:icon="@android:drawable/ic_menu_add"
+        app:showAsAction="never" />
     <item
         android:id="@+id/nav_mis_terrenos"
-        android:title="Mis Terrenos" />
-
+        android:title="Mis Terrenos"
+        android:icon="@android:drawable/ic_menu_view"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/nav_crear_sesion"
+        android:title="Crear Sesión de Trabajo"
+        android:icon="@android:drawable/ic_menu_edit"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/nav_unirse_sesion"
+        android:title="Unirse a Sesión de Trabajo"
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="never" />
+    
     <item
         android:id="@+id/nav_logout"
-        android:title="Cerrar Sesión" />
-
+        android:title="Cerrar Sesión"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:showAsAction="never" />
 </menu>

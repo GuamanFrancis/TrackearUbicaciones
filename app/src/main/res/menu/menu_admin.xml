@@ -1,23 +1,46 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <group android:checkableBehavior="single">
-
-        <item
-            android:id="@+id/nav_gestionar_usuarios"
-            android:title="Gestionar Usuarios" />
-
-        <item
-            android:id="@+id/nav_ver_terrenos"
-            android:title="Ver Terrenos" />
-
-        <item
-            android:id="@+id/nav_configuracion"
-            android:title="Configuración" />
-
-    </group>
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/nav_cerrar_sesion"
-        android:title="Cerrar sesión" />
+        android:id="@+id/nav_perfil"
+        android:title="Mi Perfil"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        app:showAsAction="never" />
 
+    <item
+        android:id="@+id/nav_registrar_terreno"
+        android:title="Registrar Nuevo Terreno"
+        android:icon="@android:drawable/ic_menu_add"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/nav_mis_terrenos"
+        android:title="Mis Terrenos"
+        android:icon="@android:drawable/ic_menu_view"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/nav_crear_sesion"
+        android:title="Crear Sesión de Trabajo"
+        android:icon="@android:drawable/ic_menu_edit"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/nav_unirse_sesion"
+        android:title="Unirse a Sesión de Trabajo"
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/nav_gestionar_usuarios"
+        android:title="Gestionar Usuarios"
+        android:icon="@android:drawable/ic_menu_manage"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Cerrar Sesión"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:showAsAction="never" />
 </menu>

@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:fitsSystemWindows="true">
 
     <!-- Contenido principal -->
     <LinearLayout
@@ -17,53 +19,42 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#388E3C"
-            android:title="Panel de Topógrafo"
-            android:titleTextColor="#FFFFFF" />
+            android:background="#1E88E5"
+            app:title="Panel de Topógrafo"
+            app:titleTextColor="#FFFFFF"
+            android:elevation="4dp" />
 
         <!-- Contenedor principal -->
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:padding="24dp"
+            android:background="#121212">
 
             <!-- Contenido inicial -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btnRegistrarTerreno"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Registrar Nuevo Terreno"
-                    android:backgroundTint="#388E3C"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginBottom="12dp" />
-
-                <Button
-                    android:id="@+id/btnVerMisTerrenos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Mis Terrenos"
-                    android:backgroundTint="#388E3C"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginBottom="12dp" />
-
-            </LinearLayout>
+                android:text="Selecciona una opción del menú"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_gravity="center" />
 
         </FrameLayout>
     </LinearLayout>
 
-    <!-- Menú lateral -->
+    <!-- Menú lateral con header -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#FFFFFF"
-        app:menu="@menu/menu_topografo" />
+        android:background="#212121"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu_topografo"
+        app:itemTextColor="#FFFFFF"
+        app:itemIconTint="#B0BEC5"
+         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

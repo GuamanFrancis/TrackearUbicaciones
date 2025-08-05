@@ -1,7 +1,26 @@
 <resources>
-    <string name="app_name">TrackearUbicaciones</string>
+    <string name="app_name">Track-Ubi</string>
     <string name="navigation_drawer_open">Abrir menú</string>
     <string name="navigation_drawer_close">Cerrar menú</string>
+    <string name="app_logo_description">Logo de Trackea Ubicaciones</string>
+    <string name="menu_profile">Mi Perfil</string>
+    <string name="menu_register_terrain">Registrar Nuevo Terreno</string>
+    <string name="menu_my_terrains">Mis Terrenos</string>
+    <string name="menu_create_session">Crear Sesión de Trabajo</string>
+    <string name="menu_join_session">Unirse a Sesión de Trabajo</string>
+    <string name="menu_manage_users">Gestionar Usuarios</string>
+    <string name="menu_logout">Cerrar Sesión</string>
+    <string name="admin_panel">Panel de Administrador</string>
+    <string name="select_menu_option">Selecciona una opción del menú</string>
+    <string name="create_session_title">Crear Sesión Colaborativa</string>
+    <string name="session_name_hint">Nombre de la sesión</string>
+    <string name="create">Crear</string>
+    <string name="cancel">Cancelar</string>
+    <string name="enter_session_name">Ingresa un nombre para la sesión</string>
+    <string name="error_creating_session">Error al crear la sesión</string>
+    <string name="error_loading_user_data">Error al cargar datos del usuario</string>
+    <string name="loading">Cargando...</string>
+
 
     <string-array name="roles">
         <item>Administrador</item>

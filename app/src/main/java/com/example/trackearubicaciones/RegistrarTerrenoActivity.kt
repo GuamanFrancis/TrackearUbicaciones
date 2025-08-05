@@ -4,13 +4,14 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.example.trackearubicaciones.databinding.ActivityRegistrarTerrenoBinding
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import org.osmdroid.config.Configuration
@@ -18,6 +19,10 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
+import com.google.android.gms.location.LocationServices
 
 class RegistrarTerrenoActivity : AppCompatActivity() {
 
@@ -25,6 +30,7 @@ class RegistrarTerrenoActivity : AppCompatActivity() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var map: MapView
     private var currentLocation: Location? = null
+    private var isViewMode = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +45,19 @@ class RegistrarTerrenoActivity : AppCompatActivity() {
 
         setupMap()
 
-        binding.btnObtenerUbicacion.setOnClickListener {
-            requestLocation()
-        }
-
-        binding.btnGuardarTerreno.setOnClickListener {
-            guardarTerreno()
+        // Verificar si estamos en modo vista
+        val terrenoId = intent.getStringExtra("terrenoId")
+        Log.d("RegistrarTerrenoActivity", "Recibido terrenoId: $terrenoId")
+        if (terrenoId != null) {
+            isViewMode = true
+            cargarTerreno(terrenoId)
+            binding.edtNombreTerreno.isEnabled = false
+            binding.edtDescripcion.isEnabled = false
+            binding.btnObtenerUbicacion.visibility = View.GONE
+            binding.btnGuardarTerreno.visibility = View.GONE
+        } else {
+            binding.btnObtenerUbicacion.setOnClickListener { requestLocation() }
+            binding.btnGuardarTerreno.setOnClickListener { guardarTerreno() }
         }
     }
 
@@ -52,6 +65,46 @@ class RegistrarTerrenoActivity : AppCompatActivity() {
         map.setTileSource(TileSourceFactory.MAPNIK)
         map.setMultiTouchControls(true)
         map.controller.setZoom(15.0)
+    }
+
+    private fun cargarTerreno(terrenoId: String) {
+        FirebaseDatabase.getInstance().getReference("terrenos").child(terrenoId)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val terreno = snapshot.getValue(Terreno::class.java)
+                    if (terreno != null) {
+                        Log.d("RegistrarTerrenoActivity", "Terreno cargado: ${terreno.nombre}")
+                        binding.edtNombreTerreno.setText(terreno.nombre)
+                        binding.edtDescripcion.setText(terreno.descripcion)
+                        binding.tvUbicacion.text = "Ubicación: ${terreno.latitud}, ${terreno.longitud}"
+
+                        // Verificación de nulidad para latitud y longitud
+                        val latitud = terreno.latitud ?: 0.0
+                        val longitud = terreno.longitud ?: 0.0
+
+                        val geoPoint = GeoPoint(latitud, longitud)
+                        map.controller.setCenter(geoPoint)
+
+                        val marker = Marker(map)
+                        marker.position = geoPoint
+                        marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+                        marker.title = terreno.nombre
+                        map.overlays.clear()
+                        map.overlays.add(marker)
+                        map.invalidate()
+                    } else {
+                        Log.e("RegistrarTerrenoActivity", "Terreno no encontrado: $terrenoId")
+                        Toast.makeText(this@RegistrarTerrenoActivity, "Terreno no encontrado", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Log.e("RegistrarTerrenoActivity", "Error al cargar terreno: ${error.message}")
+                    Toast.makeText(this@RegistrarTerrenoActivity, "Error al cargar terreno: ${error.message}", Toast.LENGTH_SHORT).show()
+                    finish()
+                }
+            })
     }
 
     private fun requestLocation() {
