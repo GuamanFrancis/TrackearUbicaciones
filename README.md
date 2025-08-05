@@ -114,17 +114,17 @@ TrackearUbicaciones/
 
 ## 🖼️ Capturas de Pantalla
 
-**Pantalla de Login:**
-<img width="250" alt="Login" src="https://github.com/user-attachments/assets/3d58f292-4791-45c1-8370-e2289c0b2918" />
+-**Pantalla de Login:**-.
+-<img width="250" alt="Login" src="https://github.com/user-attachments/assets/3d58f292-4791-45c1-8370-e2289c0b2918" />
 
-**Mapa Colaborativo:**
-<img width="250" alt="Mapa Colaborativo" src="https://github.com/user-attachments/assets/6869ed84-3ca6-4a9f-867e-bb4e2292cd3e" />
+-**Mapa Colaborativo:**-.
+-<img width="250" alt="Mapa Colaborativo" src="https://github.com/user-attachments/assets/6869ed84-3ca6-4a9f-867e-bb4e2292cd3e" />
 
-**Gestión de Terrenos:**
-<img width="250" alt="Gestión de Terrenos" src="https://github.com/user-attachments/assets/9f26fb1a-4de1-4186-9c35-dc9566dadeb4" />
+-**Gestión de Terrenos:**-.
+-<img width="250" alt="Gestión de Terrenos" src="https://github.com/user-attachments/assets/9f26fb1a-4de1-4186-9c35-dc9566dadeb4" />
 
-**Dashboard Admin:**
-<img width="250" alt="Dashboard Admin" src="https://github.com/user-attachments/assets/c350bfa5-5f2f-49a0-aa0c-87ca5e7c604f" />
+-**Dashboard Admin:**-.
+-<img width="250" alt="Dashboard Admin" src="https://github.com/user-attachments/assets/c350bfa5-5f2f-49a0-aa0c-87ca5e7c604f" />
 
 ---
 
@@ -152,6 +152,7 @@ MIT License - Ver archivo LICENSE para detalles.
 ## 🙏 Agradecimientos
 
 OpenStreetMap, Firebase, Android SDK.
+
 
 
 
