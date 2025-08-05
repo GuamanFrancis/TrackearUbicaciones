@@ -1,60 +1,72 @@
-Track-Ubi - Sistema de Mapeo y Gestión de Terrenos
 
-Descripción General
-Track-Ubi es una aplicación móvil nativa para Android. Es una solución que nos permite trackear en tiempo real la ubicación de topógrafos para mapear terrenos, calcular áreas y gestionar usuarios, con un enfoque en servicios en segundo plano para geolocalización continua.
+# 🚩 Track-Ubi - Sistema de Mapeo y Gestión de Terrenos
 
-Características Principales
+![Android](https://img.shields.io/badge/Android-7.0%2B-brightgreen?logo=android)
+![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-blue?logo=kotlin)
+![Firebase](https://img.shields.io/badge/Firebase-Auth%20%7C%20Realtime%20DB-yellow?logo=firebase)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-Aplicación Móvil
+---
 
-Geolocalización en Tiempo Real: Trackea la ubicación de hasta tres dispositivos usando OpenStreetMap (OSMDroid) y servicios en segundo plano.
-Cálculo de Áreas: Calcula el área de terrenos mapeados.
-Autenticación: Sistema de login con Firebase Authentication.
-Gestión de Usuarios: Interfaz administrativa para agregar, eliminar o desactivar usuarios.
-Visualización de Terrenos: Muestra ubicaciones, polígonos y características de los terrenos.
-Colaboración: Permite a los topógrafos ver la ubicación de sus compañeros en tiempo real.
+## 📱 Descripción General
+**Track-Ubi** es una aplicación móvil nativa para Android que permite trackear en tiempo real la ubicación de topógrafos, mapear terrenos, calcular áreas y gestionar usuarios, todo con geolocalización continua en segundo plano.
 
+---
 
-Tecnologías Utilizadas
+## ✨ Características Principales
 
-Lenguaje: Kotlin, Java
-Framework: Android SDK
-Autenticación y Base de Datos: Firebase Authentication, Firebase Realtime Database
-Mapas: OSMDroid, Google Play Services Maps
-UI: Android View Binding, Material Design
-Dependencias: Retrofit, RecyclerView, CardView
+- 📍 **Geolocalización en Tiempo Real:** Trackea la ubicación de hasta tres dispositivos usando OpenStreetMap (OSMDroid) y servicios en segundo plano.
+- 📐 **Cálculo de Áreas:** Calcula el área de terrenos mapeados.
+- 🔐 **Autenticación:** Sistema de login con Firebase Authentication.
+- 👥 **Gestión de Usuarios:** Interfaz administrativa para agregar, eliminar o desactivar usuarios.
+- 🗺️ **Visualización de Terrenos:** Muestra ubicaciones, polígonos y características de los terrenos.
+- 🤝 **Colaboración:** Permite a los topógrafos ver la ubicación de sus compañeros en tiempo real.
 
-Requisitos del Sistema
+---
 
-Entorno: Android Studio Hedgehog | 2023.1.1 o superior
-JDK: 11 o superior
-API: Android SDK API 24+ (Android 7.0+)
-Gradle: 8.9.1
-Kotlin: 2.0.21
+## 🛠️ Tecnologías Utilizadas
 
-Instalación y Configuración
-1. Clonar el Repositorio
-git clone https://github.com/tu-usuario/TrackearUbicaciones.git
-cd TrackearUbicaciones
+| Lenguaje   | Framework      | Autenticación & DB         | Mapas                        | UI & Diseño         | Dependencias                  |
+|------------|---------------|----------------------------|------------------------------|---------------------|-------------------------------|
+| Kotlin, Java | Android SDK  | Firebase Auth, Realtime DB | OSMDroid, Google Maps        | Material Design     | Retrofit, RecyclerView, CardView |
 
-2. Configuración de Firebase
+---
 
-Crea un proyecto en Firebase Console.
-Habilita Authentication y Realtime Database.
-Descarga google-services.json y colócalo en la carpeta app/.
+## 💻 Requisitos del Sistema
 
-3. Configuración de Android
+- **Entorno:** Android Studio Hedgehog | 2023.1.1 o superior
+- **JDK:** 11 o superior
+- **API:** Android SDK API 24+ (Android 7.0+)
+- **Gradle:** 8.9.1
+- **Kotlin:** 2.0.21
 
-Abre el proyecto en Android Studio.
-Sincroniza Gradle y espera la configuración.
+---
 
-4. Ejecución
+## ⚡ Instalación y Configuración
 
-Debug: ./gradlew assembleDebug
-Release: ./gradlew assembleRelease
-Instalación: ./gradlew installDebug
+1. **Clonar el Repositorio**
+   ```sh
+   git clone https://github.com/tu-usuario/TrackearUbicaciones.git
+   cd TrackearUbicaciones
+   ```
+2. **Configuración de Firebase**
+   - Crea un proyecto en [Firebase Console](https://console.firebase.google.com/).
+   - Habilita Authentication y Realtime Database.
+   - Descarga `google-services.json` y colócalo en la carpeta `app/`.
+3. **Configuración de Android**
+   - Abre el proyecto en Android Studio.
+   - Sincroniza Gradle y espera la configuración.
+4. **Ejecución**
+   ```sh
+   ./gradlew assembleDebug
+   ./gradlew installDebug
+   ```
 
-Estructura del Proyecto
+---
+
+## 📂 Estructura del Proyecto
+
+```text
 TrackearUbicaciones/
 ├── app/
 │   ├── src/main/java/com.example.trackearubicaciones/
@@ -75,12 +87,19 @@ TrackearUbicaciones/
 ├── gradle/
 ├── build.gradle.kts
 └── README.md
+```
 
-Seguridad
+---
 
-Archivos sensibles como google-services.json no deben subirse al repositorio.
+## 🔒 Seguridad
 
-Permisos de Android
+> ⚠️ **Nota:** Archivos sensibles como `google-services.json` **no deben subirse** al repositorio.
+
+---
+
+## 📜 Permisos de Android
+
+```xml
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
@@ -89,39 +108,50 @@ Permisos de Android
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+```
 
-Capturas de Pantalla
+---
 
-Pantalla de Login: Interfaz de autenticación inicial.
--<img width="598" height="1280" alt="image" src="https://github.com/user-attachments/assets/3d58f292-4791-45c1-8370-e2289c0b2918" />
- 
-Mapa Colaborativo: Visualización en tiempo real de topógrafos.
--<img width="720" height="1544" alt="image" src="https://github.com/user-attachments/assets/6869ed84-3ca6-4a9f-867e-bb4e2292cd3e" />
+## 🖼️ Capturas de Pantalla
 
-Gestión de Terrenos: Creacion de nuevos terrenos.
--<img width="720" height="1552" alt="image" src="https://github.com/user-attachments/assets/9f26fb1a-4de1-4186-9c35-dc9566dadeb4" />
+**Pantalla de Login:**
+<img width="250" alt="Login" src="https://github.com/user-attachments/assets/3d58f292-4791-45c1-8370-e2289c0b2918" />
 
-Dashboard Admin: Gestión de usuarios y ubicaciones.
--<img width="720" height="1227" alt="image" src="https://github.com/user-attachments/assets/c350bfa5-5f2f-49a0-aa0c-87ca5e7c604f" />
+**Mapa Colaborativo:**
+<img width="250" alt="Mapa Colaborativo" src="https://github.com/user-attachments/assets/6869ed84-3ca6-4a9f-867e-bb4e2292cd3e" />
 
-Documentación
+**Gestión de Terrenos:**
+<img width="250" alt="Gestión de Terrenos" src="https://github.com/user-attachments/assets/9f26fb1a-4de1-4186-9c35-dc9566dadeb4" />
 
-Video de Funcionamiento: Disponible en youtube.
-Código: Incluye comentarios detallados .
+**Dashboard Admin:**
+<img width="250" alt="Dashboard Admin" src="https://github.com/user-attachments/assets/c350bfa5-5f2f-49a0-aa0c-87ca5e7c604f" />
 
+---
 
-Licencia
+## 📚 Documentación
+
+- 🎬 **Video de Funcionamiento:** Disponible en YouTube.
+- 💻 **Código:** Incluye comentarios detallados.
+
+---
+
+## 📝 Licencia
 
 MIT License - Ver archivo LICENSE para detalles.
 
+---
 
-Contacto
+## 👤 Contacto
 
-Autor: Francis Guaman
-Repositorio: https://github.com/GuamanFrancis
-Autor: Anderson Vilatuña
-Repositorio:
+- **Autor:** Francis Guaman  
+  [GitHub](https://github.com/GuamanFrancis)
+- **Autor:** Anderson Vilatuña
 
-Agradecimientos
+---
+
+## 🙏 Agradecimientos
 
 OpenStreetMap, Firebase, Android SDK.
+
+
+
