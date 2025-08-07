@@ -46,7 +46,7 @@
 
 1. **Clonar el Repositorio**
    ```sh
-   git clone https://github.com/tu-usuario/TrackearUbicaciones.git
+   git clone https://github.com/GuamanFrancis/TrackearUbicaciones.git
    cd TrackearUbicaciones
    ```
 2. **Configuración de Firebase**
@@ -130,11 +130,19 @@ TrackearUbicaciones/
 
 <img width="250" alt="Dashboard Admin" src="https://github.com/user-attachments/assets/c350bfa5-5f2f-49a0-aa0c-87ca5e7c604f" />
 
+**Publicación Tienda:**
+
+<img width="1250" height="486" alt="image" src="https://github.com/user-attachments/assets/cbf34b01-b41b-43b2-bfe9-93b842f402a0" />
+
+
 ---
 
 ## 📚 Documentación
 
 - 🎬 **Video de Funcionamiento:** Disponible en YouTube.
+  
+ [YouTube](https://www.youtube.com/watch?v=hlPPazDQRBw)
+
 - 💻 **Código:** Incluye comentarios detallados.
 
 ---
@@ -150,12 +158,14 @@ MIT License - Ver archivo LICENSE para detalles.
 - **Autor:** Francis Guaman  
   [GitHub](https://github.com/GuamanFrancis)
 - **Autor:** Anderson Vilatuña
+- [GitHub](https://github.com/SoyAndersonJoel)
 
 ---
 
 ## 🙏 Agradecimientos
 
 OpenStreetMap, Firebase, Android SDK.
+
 
 
 
